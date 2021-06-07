@@ -167,6 +167,7 @@
 		<?php endif ;?>
 
 		<?php if($tipe == 'kelas') : ?>
+			
 			<p style="text-align:center"><img alt="" src="<?= base_url('assets/sips/');?>img/logo1.png" style="float:left; height:100px; width:100px " />
 				<span style="font-size:20px"><span style="font-family:Times New Roman,Times,serif">PEMERINTAH KABUPATEN WONOSOBO
 					<img class="hidden" alt="" src="<?= base_url('assets/sips/');?>img/logo1.png " style="float:right; height:100px; width:100px; " /><br />

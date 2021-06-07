@@ -77,14 +77,13 @@
                  <div class="row">
                   <div class="col-sm-4">
                     <?php
-                    $img = base_url('assets/sips/img/siswa/'.$oneSiswa->nisn.'.png');
-                    if(empty($img)) : ?>
+                    if(file_exists('assets/sips/img/siswa/'.$oneSiswa->nisn.'.png')) : ?>
                       <img class="img-thumbnail"
-                      src="<?= base_url('assets/sips/img/siswa/default.jpg'); ?>"
+                      src="<?= base_url('assets/sips/img/siswa/'.$oneSiswa->nisn.'.png'); ?>"
                       alt="User profile picture">
                       <?php else : ?>
                         <img class="img-thumbnail"
-                        src="<?= $img ; ?>"
+                        src="<?= base_url('assets/sips/img/siswa/default.jpg'); ?>"
                         alt="User profile picture">
                       <?php endif;?>
                     </div>
