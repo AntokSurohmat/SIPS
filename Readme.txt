@@ -1,3 +1,3 @@
 Login Info
-admin / admin
+admin / admin12345
 guru123555 / guru123555

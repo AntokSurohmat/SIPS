@@ -46,7 +46,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -244,7 +244,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataKategoriListPelanggaran');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 		$data['oneWeb'] = $this->admin_model->getOneWebsite($this->session->userdata('school_name'));
@@ -276,7 +276,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataKategoriListPelanggaran');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -302,7 +302,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataKategoriListPelanggaran');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -437,7 +437,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataMasterGuru');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -463,7 +463,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataMasterGuru');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -582,7 +582,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataMasterKelas');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -607,7 +607,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataMasterKelas');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -740,7 +740,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/datamMsterSiswa');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -767,7 +767,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/dataMasteSiswas');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -976,7 +976,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/pengaturanPengguna');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -1002,7 +1002,7 @@ class Admin extends CI_Controller {
 		if (is_numeric($id)) {
 			$this->toastr->error('Hanya Bisa Menggunakan Enkripsi');
 			redirect('admin/pengaturanPengguna');
-		} 
+		}
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
 
@@ -1100,7 +1100,7 @@ class Admin extends CI_Controller {
 		$data['siswaAll'] = $this->admin_model->getSiswa();
 		$data['kelasAll'] = $this->admin_model->getKelas();
 
-		
+
 
 		if($this->input->post('pencarian') == 'siswa'){
 
@@ -1147,9 +1147,9 @@ class Admin extends CI_Controller {
 				tb_wali.id AS id_wali,
 				tb_wali.phone_number AS phone_number_wali,
 				tb_tipe_pelanggaran.id AS id_tipe_pelanggaran
-				FROM tb_pelanggaran 
+				FROM tb_pelanggaran
 				JOIN tb_siswa ON tb_pelanggaran.student_id = tb_siswa.id
-				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id 
+				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id
 				JOIN tb_guru ON tb_pelanggaran.teacher_id = tb_guru.id
 				JOIN tb_wali ON tb_pelanggaran.wali_id = tb_wali.id
 				JOIN tb_tipe_pelanggaran ON tb_pelanggaran.type_id = tb_tipe_pelanggaran.id
@@ -1167,8 +1167,8 @@ class Admin extends CI_Controller {
 				tb_wali.phone_number AS phone_number_wali,
 				tb_tipe_pelanggaran.id AS id_tipe_pelanggaran
 				FROM tb_pelanggaran
-				JOIN tb_siswa ON tb_pelanggaran.student_id = tb_siswa.id 
-				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id 
+				JOIN tb_siswa ON tb_pelanggaran.student_id = tb_siswa.id
+				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id
 				JOIN tb_guru ON tb_pelanggaran.teacher_id = tb_guru.id
 				JOIN tb_wali ON tb_pelanggaran.wali_id = tb_wali.id
 				JOIN tb_tipe_pelanggaran ON tb_pelanggaran.type_id = tb_tipe_pelanggaran.id
@@ -1206,7 +1206,7 @@ class Admin extends CI_Controller {
 		$data['siswaAll'] = $this->admin_model->getSiswa();
 		$data['kelasAll'] = $this->admin_model->getKelas();
 		$data['oneWeb'] = $this->admin_model->getOneWebsite($this->session->userdata('school_name'));
-		
+
 
 		if($this->input->post('pencarianPdf') == 'siswa'){
 
@@ -1250,9 +1250,9 @@ class Admin extends CI_Controller {
 				tb_wali.id AS id_wali,
 				tb_wali.phone_number AS phone_number_wali,
 				tb_tipe_pelanggaran.id AS id_tipe_pelanggaran
-				FROM tb_pelanggaran 
+				FROM tb_pelanggaran
 				JOIN tb_siswa ON tb_pelanggaran.student_id = tb_siswa.id
-				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id 
+				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id
 				JOIN tb_guru ON tb_pelanggaran.teacher_id = tb_guru.id
 				JOIN tb_wali ON tb_pelanggaran.wali_id = tb_wali.id
 				JOIN tb_tipe_pelanggaran ON tb_pelanggaran.type_id = tb_tipe_pelanggaran.id
@@ -1270,8 +1270,8 @@ class Admin extends CI_Controller {
 				tb_wali.phone_number AS phone_number_wali,
 				tb_tipe_pelanggaran.id AS id_tipe_pelanggaran
 				FROM tb_pelanggaran
-				JOIN tb_siswa ON tb_pelanggaran.student_id = tb_siswa.id 
-				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id 
+				JOIN tb_siswa ON tb_pelanggaran.student_id = tb_siswa.id
+				JOIN tb_kelas ON tb_pelanggaran.class_id = tb_kelas.id
 				JOIN tb_guru ON tb_pelanggaran.teacher_id = tb_guru.id
 				JOIN tb_wali ON tb_pelanggaran.wali_id = tb_wali.id
 				JOIN tb_tipe_pelanggaran ON tb_pelanggaran.type_id = tb_tipe_pelanggaran.id
@@ -1285,7 +1285,7 @@ class Admin extends CI_Controller {
 			$data['hasilOne'] = $this->db->query($query)->row();
 			$data['hasilAll'] = $this->db->query($query)->result();
 			$data['hasilTotal'] = $this->db->query($queryTotal)->row();
-			
+
 			$data['tipe'] = $pencarian;
 
 			$data['title'] = $this->admin_model->website();
@@ -1309,7 +1309,7 @@ class Admin extends CI_Controller {
 	public function editProfile(){
 
 		$data['user'] = $this->db->get_where('tb_users',['username' => $this->session->userdata('username')])->row();
-		
+
 		$this->form_validation->set_rules('fullname','Fullname','required');
 
 		if($this->form_validation->run() == false){
